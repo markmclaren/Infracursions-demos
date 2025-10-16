@@ -33,7 +33,6 @@ Comprehensive analysis combining multiple data sources with extended time series
 - Extended timeline (1985-2023)
 - Multiple PMTiles data sources
 - Advanced layering system
-- Research-grade visualization
 
 ## Technical Details
 
