@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deforestation Map (3D)</title>
+    <!-- MapLibre GL JS CSS -->
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.css' />
+    <!-- MapLibre GL JS -->
+    <script src='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.js'></script>
+    <!-- PMTiles Protocol -->
+    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background: #007cba;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #005a87;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .legend-scale {
+            display: flex;
+            height: 20px;
+            margin-bottom: 5px;
+        }
+
+        .legend-scale div {
+            flex: 1;
+            height: 100%;
+        }
+
+        .legend-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        /* Range slider styling */
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007cba;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007cba;
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Checkbox styling */
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading">
+        <p>Loading map data...</p>
+    </div>
+
+    <!-- Map controls -->
+    <div class="controls">
+        <div class="control-group">
+            <label for="yearSlider">Year: <span id="yearDisplay">2020</span></label>
+            <input type="range" id="yearSlider" min="2001" max="2020" value="2020" step="1">
+            <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                2001 ←→ 2020
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label for="countrySelect">Filter by Country:</label>
+            <select id="countrySelect">
+                <option value="all">All Countries</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Perú">Perú</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Territory Types:</label>
+            <div style="margin-top: 10px;">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showBosque" checked>
+                    Bosque Protector
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showDepartamental" checked>
+                    Departamental
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showNacional" checked>
+                    Nacional
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showIndigenous" checked>
+                    Indigenous Territories
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+        <div class="legend-title">Deforestation (hectares)</div>
+        <div class="legend-scale">
+            <div style="background: #fef0d9;"></div>
+            <div style="background: #fdcc8a;"></div>
+            <div style="background: #fc8d59;"></div>
+            <div style="background: #e34a33;"></div>
+            <div style="background: #b30000;"></div>
+        </div>
+        <div class="legend-labels">
+            <span>Low</span>
+            <span>High</span>
+        </div>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info" id="info" style="display: none;">
+        <h3>Territory Information</h3>
+        <p id="territory-name"></p>
+        <p id="deforestation-value"></p>
+        <p id="territory-country"></p>
+    </div>
+
+    <script>
+        // add the PMTiles plugin to the maplibregl global.
+        const protocol = new pmtiles.Protocol();
+        maplibregl.addProtocol('pmtiles', protocol.tile);
+
+        // Load the local PMTiles file
+        const PMTILES_URL = 'territories.pmtiles';
+        const p = new pmtiles.PMTiles(PMTILES_URL);
+
+        // Add the PMTiles instance to the protocol
+        protocol.add(p);
+
+        // Initialize map after loading PMTiles header
+        p.getHeader().then(h => {
+            const map = new maplibregl.Map({
+            container: 'map',
+            style: {
+                version: 8,
+                sources: {
+                    'osm': {
+                        type: 'raster',
+                        tiles: [
+                            'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                        ],
+                        tileSize: 256,
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Data: <a href="https://www.raisg.org/en/maps/">RAISG</a>'
+                    },
+                    'territories-pmtiles': {
+                        type: 'vector',
+                        url: 'pmtiles://territories.pmtiles'
+                    }
+                },
+                layers: [
+                    {
+                        id: 'osm',
+                        type: 'raster',
+                        source: 'osm'
+                    },
+                    {
+                        id: 'territories-bosque',
+                        type: 'fill-extrusion',
+                        source: 'territories-pmtiles',
+                        'source-layer': 'bosque',
+                        paint: {
+                            'fill-extrusion-color': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, '#fef0d9',
+                                50, '#fdcc8a',
+                                200, '#fc8d59',
+                                500, '#e34a33',
+                                1000, '#b30000'
+                            ],
+                            'fill-extrusion-height': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, 0,
+                                50, 10000,
+                                200, 50000,
+                                500, 100000,
+                                1000, 200000
+                            ],
+                            'fill-extrusion-base': 0,
+                            'fill-extrusion-opacity': 0.8
+                        },
+                        filter: ['!=', ['get', 'codigo_bos'], null]
+                    },
+                    {
+                        id: 'territories-departamental',
+                        type: 'fill-extrusion',
+                        source: 'territories-pmtiles',
+                        'source-layer': 'departamental',
+                        paint: {
+                            'fill-extrusion-color': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, '#fef0d9',
+                                50, '#fdcc8a',
+                                200, '#fc8d59',
+                                500, '#e34a33',
+                                1000, '#b30000'
+                            ],
+                            'fill-extrusion-height': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, 0,
+                                50, 10000,
+                                200, 50000,
+                                500, 100000,
+                                1000, 200000
+                            ],
+                            'fill-extrusion-base': 0,
+                            'fill-extrusion-opacity': 0.8
+                        },
+                        filter: ['!=', ['get', 'codigo_dep'], null]
+                    },
+                    {
+                        id: 'territories-nacional',
+                        type: 'fill-extrusion',
+                        source: 'territories-pmtiles',
+                        'source-layer': 'nacional',
+                        paint: {
+                            'fill-extrusion-color': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, '#fef0d9',
+                                50, '#fdcc8a',
+                                200, '#fc8d59',
+                                500, '#e34a33',
+                                1000, '#b30000'
+                            ],
+                            'fill-extrusion-height': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, 0,
+                                50, 10000,
+                                200, 50000,
+                                500, 100000,
+                                1000, 200000
+                            ],
+                            'fill-extrusion-base': 0,
+                            'fill-extrusion-opacity': 0.8
+                        },
+                        filter: ['!=', ['get', 'codigo_nac'], null]
+                    },
+                    {
+                        id: 'territories-indigenous',
+                        type: 'fill-extrusion',
+                        source: 'territories-pmtiles',
+                        'source-layer': 'indigenous',
+                        paint: {
+                            'fill-extrusion-color': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, '#fef0d9',
+                                50, '#fdcc8a',
+                                200, '#fc8d59',
+                                500, '#e34a33',
+                                1000, '#b30000'
+                            ],
+                            'fill-extrusion-height': [
+                                'interpolate',
+                                ['linear'],
+                                ['get', 'F2020'],
+                                0, 0,
+                                50, 10000,
+                                200, 50000,
+                                500, 100000,
+                                1000, 200000
+                            ],
+                            'fill-extrusion-base': 0,
+                            'fill-extrusion-opacity': 0.8
+                        },
+                        filter: ['!=', ['get', 'codigo_tis'], null]
+                    }
+                ]
+            },
+            center: [-60, -10], // Center on South America
+            zoom: 4,
+            pitch: 45, // 3D tilt
+            bearing: 0
+        });
+
+        // Global variables
+        let currentYear = 2020;
+        let currentCountry = 'all';
+
+        // Wait for map to load
+        map.on('load', function() {
+            // Hide loading indicator
+            document.getElementById('loading').style.display = 'none';
+
+            // Set up event listeners
+            // Year slider
+            const yearSlider = document.getElementById('yearSlider');
+            const yearDisplay = document.getElementById('yearDisplay');
+
+            yearSlider.addEventListener('input', function(e) {
+                currentYear = parseInt(e.target.value);
+                yearDisplay.textContent = currentYear;
+                // Update colors and heights for all layers
+                ['bosque', 'departamental', 'nacional', 'indigenous'].forEach(type => {
+                    const layerId = `territories-${type}`;
+                    map.setPaintProperty(layerId, 'fill-extrusion-color', [
+                        'interpolate',
+                        ['linear'],
+                        ['get', `F${currentYear}`],
+                        0, '#fef0d9',
+                        50, '#fdcc8a',
+                        200, '#fc8d59',
+                        500, '#e34a33',
+                        1000, '#b30000'
+                    ]);
+                    map.setPaintProperty(layerId, 'fill-extrusion-height', [
+                        'interpolate',
+                        ['linear'],
+                        ['get', `F${currentYear}`],
+                        0, 0,
+                        50, 10000,
+                        200, 50000,
+                        500, 100000,
+                        1000, 200000
+                    ]);
+                });
+            });
+
+            // Country selection
+            document.getElementById('countrySelect').addEventListener('change', function(e) {
+                currentCountry = e.target.value;
+                // Update filters for all layers
+                const codigoFields = {
+                    'bosque': 'codigo_bos',
+                    'departamental': 'codigo_dep',
+                    'nacional': 'codigo_nac',
+                    'indigenous': 'codigo_tis'
+                };
+                
+                Object.keys(codigoFields).forEach(type => {
+                    const layerId = `territories-${type}`;
+                    const codigoField = codigoFields[type];
+                    let filter = ['!=', ['get', codigoField], null];
+                    
+                    if (currentCountry !== 'all') {
+                        filter = ['all', filter, ['==', ['get', 'pais'], currentCountry]];
+                    }
+                    
+                    map.setFilter(layerId, filter);
+                });
+            });
+
+            // Territory type checkboxes
+            document.getElementById('showBosque').addEventListener('change', function(e) {
+                map.setLayoutProperty('territories-bosque', 'visibility', e.target.checked ? 'visible' : 'none');
+            });
+
+            document.getElementById('showDepartamental').addEventListener('change', function(e) {
+                map.setLayoutProperty('territories-departamental', 'visibility', e.target.checked ? 'visible' : 'none');
+            });
+
+            document.getElementById('showNacional').addEventListener('change', function(e) {
+                map.setLayoutProperty('territories-nacional', 'visibility', e.target.checked ? 'visible' : 'none');
+            });
+
+            document.getElementById('showIndigenous').addEventListener('change', function(e) {
+                map.setLayoutProperty('territories-indigenous', 'visibility', e.target.checked ? 'visible' : 'none');
+            });
+
+            // Mouse events for hover information - check all territory layers
+            const territoryLayers = ['territories-bosque', 'territories-departamental', 'territories-nacional', 'territories-indigenous'];
+
+            territoryLayers.forEach(layerId => {
+                map.on('mousemove', layerId, function(e) {
+                    if (e.features.length > 0) {
+                        const feature = e.features[0];
+                        const properties = feature.properties;
+
+                        // Show info panel
+                        document.getElementById('info').style.display = 'block';
+
+                        // Update info content
+                        document.getElementById('territory-name').textContent = `Name: ${properties.nombre || 'Unknown'}`;
+                        document.getElementById('deforestation-value').textContent = `Deforestation (${currentYear}): ${properties[`F${currentYear}`] ? Math.round(properties[`F${currentYear}`] * 100) / 100 : 'No data'} ha`;
+                        document.getElementById('territory-country').textContent = `Country: ${properties.pais || 'Unknown'}`;
+                    }
+                });
+
+                map.on('mouseleave', layerId, function() {
+                    // Hide info panel
+                    document.getElementById('info').style.display = 'none';
+                });
+            });
+
+            // Add zoom and rotation controls
+            map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+            // Add fullscreen control
+            map.addControl(new maplibregl.FullscreenControl(), 'top-right');
+        });
+        });
+    </script>
+</body>
+</html>

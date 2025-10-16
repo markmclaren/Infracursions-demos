@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>PMTiles Viewer</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.js'></script>
+    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+        .layer-control {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 250px;
+            font-family: Arial, sans-serif;
+        }
+
+        .layer-control h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .layer-item {
+            margin: 8px 0;
+        }
+
+        .layer-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .layer-item label {
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .toggle-all {
+            margin-bottom: 15px;
+            padding: 5px 10px;
+            background: #007cba;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .toggle-all:hover {
+            background: #005a87;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<div class='layer-control'>
+    <h3>Layer Controls</h3>
+    <button class='toggle-all' onclick='toggleAllLayers()'>Toggle All</button>
+
+    <div style='margin: 15px 0; padding: 10px; background: #f5f5f5; border-radius: 3px;'>
+        <h4 style='margin: 0 0 10px 0; font-size: 14px; color: #333;'>Year Selection</h4>
+        <div style='margin-bottom: 8px;'>
+            <label for='yearRange' style='display: block; font-size: 12px; color: #666; margin-bottom: 4px;'>
+                Year: <span id='currentYear'>1985</span>
+            </label>
+            <input type='range' id='yearRange' min='1985' max='2023' value='1985' step='1'
+                   style='width: 100%; height: 6px; border-radius: 3px; outline: none; opacity: 0.7;'
+                   oninput='' onchange=''>
+        </div>
+        <div style='display: flex; justify-content: space-between; font-size: 11px; color: #888;'>
+            <span>1985</span>
+            <span>2023</span>
+        </div>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='airstrip' onchange='toggleLayer("airstrip")'>
+        <label for='airstrip'>Airstrips (Red Dots)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='car' onchange='toggleLayer("car")'>
+        <label for='car'>CAR Areas (Green)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='conservation_unit' onchange='toggleLayer("conservation_unit")'>
+        <label for='conservation_unit'>Conservation Units (Blue)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='deforestation_deter' onchange='toggleLayer("deforestation_deter")'>
+        <label for='deforestation_deter'>Deforestation (Yellow)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='indigenous_land' onchange='toggleLayer("indigenous_land")'>
+        <label for='indigenous_land'>Indigenous Lands (Magenta)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='map_region' onchange='toggleLayer("map_region")'>
+        <label for='map_region'>Map Regions (Cyan)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='mining_detection' onchange='toggleLayer("mining_detection")'>
+        <label for='mining_detection'>Mining Detection (Orange Dots)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='non_designated_public_forest' onchange='toggleLayer("non_designated_public_forest")'>
+        <label for='non_designated_public_forest'>Public Forests (Purple)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='rural_settlement' onchange='toggleLayer("rural_settlement")'>
+        <label for='rural_settlement'>Rural Settlements (Dark Green)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='sigef_private' onchange='toggleLayer("sigef_private")'>
+        <label for='sigef_private'>SIGEF Private (Maroon)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='sigef_public' onchange='toggleLayer("sigef_public")'>
+        <label for='sigef_public'>SIGEF Public (Navy)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='snci_private' onchange='toggleLayer("snci_private")'>
+        <label for='snci_private'>SNCI Private (Olive)</label>
+    </div>
+
+    <div class='layer-item'>
+        <input type='checkbox' id='snci_public' onchange='toggleLayer("snci_public")'>
+        <label for='snci_public'>SNCI Public (Teal)</label>
+    </div>
+</div>
+
+</body>
+</html>
