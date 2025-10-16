@@ -3819,7 +3819,7 @@
     {
       "id": "lulc1998",
       "type": "fill",
-      "source": "lulc1998",
+      "source": "lulc_1995_1999",
       "source-layer": "lulc_nat_ant_1998_gpu_wgs84_dissolved",
       "layout": {
         "visibility": "none"
@@ -3853,7 +3853,7 @@
     {
       "id": "lulc1999",
       "type": "fill",
-      "source": "lulc1999",
+      "source": "lulc_1995_1999",
       "source-layer": "lulc_nat_ant_1999_gpu_wgs84_dissolved",
       "layout": {
         "visibility": "none"
