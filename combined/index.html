@@ -8,6 +8,21 @@
     <script src='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.js'></script>
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
     <script src="script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/Infracursions-demos/combined/sw.js')
+                    .then(function(registration) {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(function(error) {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -65,9 +80,14 @@
 
 <div id='map'></div>
 
-<div class='layer-control'>
-    <h3>Layer Controls</h3>
-    <button class='toggle-all' onclick='toggleAllLayers()'>Toggle All</button>
+    <div class='layer-control'>
+        <h3>Layer Controls</h3>
+        <button class='toggle-all' onclick='toggleAllLayers()'>Toggle All</button>
+
+        <!-- Loading indicator -->
+        <div id='loadingIndicator' style='display: none; margin: 10px 0; padding: 8px; background: #e7f3ff; border-radius: 3px; font-size: 12px; color: #0066cc;'>
+            Loading year data...
+        </div>
 
     <div style='margin: 15px 0; padding: 10px; background: #f5f5f5; border-radius: 3px;'>
         <h4 style='margin: 0 0 10px 0; font-size: 14px; color: #333;'>Year Selection</h4>
