@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infracursions - Deforestation Visualizations</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .demo-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .demo-header {
+            background-color: #e9ecef;
+            padding: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .demo-header h3 {
+            margin: 0;
+            color: #495057;
+        }
+
+        .demo-body {
+            padding: 1.5rem;
+        }
+
+        .demo-description {
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.25rem 0;
+            color: #495057;
+        }
+
+        .btn-launch {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+
+        .btn-launch:hover {
+            background-color: #5a6268;
+            border-color: #5a6268;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-3">Infracursions</h1>
+                <p class="lead">Interactive visualizations of deforestation patterns across South American territories</p>
+            </div>
+        </div>
+
+        <!-- Demo Cards -->
+        <div class="row">
+            <!-- Choropleth Demo -->
+            <div class="col-lg-6 mb-4">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>2D Choropleth Map</h3>
+                    </div>
+                    <div class="demo-body">
+                        <p class="demo-description">
+                            Interactive 2D choropleth visualization showing deforestation patterns across South American protected territories.
+                        </p>
+                        <ul class="feature-list">
+                            <li>• Interactive year slider (2001-2020)</li>
+                            <li>• Country filtering (Brasil, Bolivia, Perú)</li>
+                            <li>• Territory type toggles</li>
+                            <li>• Hover information panels</li>
+                        </ul>
+                        <a href="choropleth/" class="btn btn-launch" target="_blank">
+                            Launch 2D Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Choropleth Demo -->
+            <div class="col-lg-6 mb-4">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>3D Choropleth Map</h3>
+                    </div>
+                    <div class="demo-body">
+                        <p class="demo-description">
+                            Three-dimensional visualization where territory height represents deforestation intensity.
+                        </p>
+                        <ul class="feature-list">
+                            <li>• 3D extruded territories</li>
+                            <li>• Height-based data representation</li>
+                            <li>• Interactive camera controls</li>
+                            <li>• Same filtering capabilities</li>
+                        </ul>
+                        <a href="choropleth3d/" class="btn btn-launch" target="_blank">
+                            Launch 3D Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combined Demo -->
+            <div class="col-lg-6 mb-4">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>Combined Analysis</h3>
+                    </div>
+                    <div class="demo-body">
+                        <p class="demo-description">
+                            Comprehensive analysis combining multiple data sources with extended time series (1985-2023).
+                        </p>
+                        <ul class="feature-list">
+                            <li>• Extended timeline (1985-2023)</li>
+                            <li>• Multiple PMTiles data sources</li>
+                            <li>• Advanced layering system</li>
+                            <li>• Research-grade visualization</li>
+                        </ul>
+                        <a href="combined/" class="btn btn-launch" target="_blank">
+                            Launch Combined Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="col-lg-6 mb-4">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>About</h3>
+                    </div>
+                    <div class="demo-body">
+                        <p class="demo-description">
+                            These visualizations use RAISG data to illustrate deforestation patterns across South American territories.
+                            Built with MapLibre GL JS and PMTiles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
