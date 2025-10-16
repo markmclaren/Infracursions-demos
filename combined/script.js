@@ -131,7 +131,7 @@ async function toggleLulcLayer(selectedYear) {
         }
         loadedYears.delete(year);
         loadingPromises.delete(year); // Clean up any pending promises
-        console.log(`Unloaded year ${year}`);
+        // console.log(`Unloaded year ${year}`);
     });
 
     // Load required years
@@ -145,7 +145,7 @@ async function toggleLulcLayer(selectedYear) {
     const selectedLayerId = `lulc${selectedYear}`;
     if (map.getLayer(selectedLayerId)) {
         map.setLayoutProperty(selectedLayerId, 'visibility', 'visible');
-        console.log(`Showing year ${selectedYear}`);
+        // console.log(`Showing year ${selectedYear}`);
     }
 }
 
@@ -201,7 +201,7 @@ async function loadYearLayer(year) {
             });
 
             loadedYears.add(year);
-            console.log(`Loaded year ${year}`);
+            // console.log(`Loaded year ${year}`);
             resolve();
 
         } catch (error) {
@@ -225,8 +225,8 @@ function updateNonLulcLayerFilters(selectedYear) {
 
     nonLulcLayers.forEach(layerId => {
         if (map.getLayer(layerId)) {
-            //console.log(`Updating filter for layer: ${layerId}`);
-            //console.log(`Selected year: ${selectedYear}`);
+            // console.log(`Updating filter for layer: ${layerId}`);
+            // console.log(`Selected year: ${selectedYear}`);
             // Apply year filter using the unified 'year' property
             //const yearFilter = ['==', ['get', 'year'], selectedYear];
             //map.setFilter(layerId, yearFilter);
@@ -262,7 +262,7 @@ function handleYearChange() {
         }
     });
 
-    updateNonLulcLayerFilters(selectedYear);
+    // updateNonLulcLayerFilters(selectedYear);
 }
 
 // Initialize when DOM is ready
