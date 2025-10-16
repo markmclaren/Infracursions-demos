@@ -130,6 +130,7 @@ async function toggleLulcLayer(selectedYear) {
             map.removeSource(`lulc${year}`);
         }
         loadedYears.delete(year);
+        loadingPromises.delete(year); // Clean up any pending promises
         console.log(`Unloaded year ${year}`);
     });
 
@@ -150,10 +151,12 @@ async function toggleLulcLayer(selectedYear) {
 
 // Load a specific year layer
 async function loadYearLayer(year) {
+    // If already loaded, return immediately
     if (loadedYears.has(year)) {
         return Promise.resolve();
     }
 
+    // If currently loading, return existing promise
     if (loadingPromises.has(year)) {
         return loadingPromises.get(year);
     }
@@ -162,6 +165,14 @@ async function loadYearLayer(year) {
         try {
             const sourceId = `lulc${year}`;
             const layerId = `lulc${year}`;
+
+            // Check if source already exists (can happen with navigation back/forth)
+            if (map.getSource(sourceId)) {
+                console.log(`Source ${sourceId} already exists, just adding layer`);
+                loadedYears.add(year);
+                resolve();
+                return;
+            }
 
             // Add source for this year
             map.addSource(sourceId, {
