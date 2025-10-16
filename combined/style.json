@@ -19,35 +19,35 @@
     },
     "lulc_1985_1989": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1985-1989_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_1985-1989_ogr.pmtiles"
     },
     "lulc_1990_1994": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1990-1994_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_1990-1994_ogr.pmtiles"
     },
     "lulc_1995_1999": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1995-1999_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_1995-1999_ogr.pmtiles"
     },
     "lulc_2000_2004": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2000-2004_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_2000-2004_ogr.pmtiles"
     },
     "lulc_2005_2009": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2005-2009_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_2005-2009_ogr.pmtiles"
     },
     "lulc_2010_2014": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2010-2014_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_2010-2014_ogr.pmtiles"
     },
     "lulc_2015_2019": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2015-2019_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_2015-2019_ogr.pmtiles"
     },
     "lulc_2020_2023": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2020-2023_ogr.pmtiles"
+      "url": "pmtiles://./combined/pmtiles/consolidated/lulc_2020-2023_ogr.pmtiles"
     }
   },
   "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
@@ -831,7 +831,7 @@
       "id": "lulc1990",
       "type": "fill",
       "source": "lulc_1990_1994",
-      "source-layer": "lulc_nat_ant_1990_gpu_wgs84_dissolved",
+      "source-layer": "year_1990",
       "layout": {
         "visibility": "none"
       },
@@ -865,7 +865,7 @@
       "id": "lulc1991",
       "type": "fill",
       "source": "lulc_1990_1994",
-      "source-layer": "lulc_nat_ant_1991_gpu_wgs84_dissolved",
+      "source-layer": "year_1991",
       "layout": {
         "visibility": "none"
       },
@@ -899,7 +899,7 @@
       "id": "lulc1992",
       "type": "fill",
       "source": "lulc_1990_1994",
-      "source-layer": "lulc_nat_ant_1992_gpu_wgs84_dissolved",
+      "source-layer": "year_1992",
       "layout": {
         "visibility": "none"
       },
@@ -933,7 +933,7 @@
       "id": "lulc1993",
       "type": "fill",
       "source": "lulc_1990_1994",
-      "source-layer": "lulc_nat_ant_1993_gpu_wgs84_dissolved",
+      "source-layer": "year_1993",
       "layout": {
         "visibility": "none"
       },
@@ -967,7 +967,7 @@
       "id": "lulc1994",
       "type": "fill",
       "source": "lulc_1990_1994",
-      "source-layer": "lulc_nat_ant_1994_gpu_wgs84_dissolved",
+      "source-layer": "year_1994",
       "layout": {
         "visibility": "none"
       },
@@ -1153,106 +1153,105 @@
       }
     },
     {
-      "id": "highway_motorway_subtle",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "maxzoom": 6,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "==",
-          [
-            "get",
-            "class"
-          ],
-          "motorway"
-        ]
-      ],
+      "id": "lulc1985",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "year_1985",
       "layout": {
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "visible"
       },
       "paint": {
-        "line-color": "hsla(0,0%,85%,0.53)",
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            1.4
-          ],
-          [
-            "zoom"
-          ],
-          4,
-          2,
-          6,
-          1.3
-        ]
-      }
-    },
-    {
-      "id": "railway_transit",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 16,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "all",
+        "fill-color": [
+          "case",
           [
             "==",
             [
               "get",
-              "class"
+              "DN"
             ],
-            "transit"
+            0
           ],
+          "#7AB5AA",
           [
-            "match",
+            "==",
             [
               "get",
-              "brunnel"
+              "DN"
             ],
-            [
-              "tunnel"
-            ],
-            false,
-            true
-          ]
-        ]
-      ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1986",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "year_1986",
       "layout": {
-        "line-join": "round"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "#dddddd",
-        "line-width": 3
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1987",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "year_1987",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
@@ -1525,72 +1524,71 @@
       }
     },
     {
-      "id": "highway_motorway_bridge_casing",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 6,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "all",
-          [
-            "==",
-            [
-              "get",
-              "brunnel"
-            ],
-            "bridge"
-          ],
-          [
-            "==",
-            [
-              "get",
-              "class"
-            ],
-            "motorway"
-          ]
-        ]
-      ],
+      "id": "lulc1988",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "year_1988",
       "layout": {
-        "line-cap": "butt",
-        "line-join": "miter"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "rgb(213, 213, 213)",
-        "line-dasharray": [
-          2,
-          0
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
         ],
-        "line-opacity": 1,
-        "line-width": [
-          "interpolate",
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1989",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "year_1989",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
           [
-            "exponential",
-            1.4
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
           ],
+          "#7AB5AA",
           [
-            "zoom"
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
           ],
-          5.8,
-          0,
-          6,
-          5,
-          20,
-          45
-        ]
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
@@ -3718,7 +3716,7 @@
       "id": "lulc1995",
       "type": "fill",
       "source": "lulc_1995_1999",
-      "source-layer": "lulc_nat_ant_1995_gpu_wgs84_dissolved",
+      "source-layer": "year_1995",
       "layout": {
         "visibility": "none"
       },
@@ -3752,7 +3750,7 @@
       "id": "lulc1996",
       "type": "fill",
       "source": "lulc_1995_1999",
-      "source-layer": "lulc_nat_ant_1996_gpu_wgs84_dissolved",
+      "source-layer": "year_1996",
       "layout": {
         "visibility": "none"
       },
@@ -3786,7 +3784,7 @@
       "id": "lulc1997",
       "type": "fill",
       "source": "lulc_1995_1999",
-      "source-layer": "lulc_nat_ant_1997_gpu_wgs84_dissolved",
+      "source-layer": "year_1997",
       "layout": {
         "visibility": "none"
       },
@@ -3820,7 +3818,7 @@
       "id": "lulc1998",
       "type": "fill",
       "source": "lulc_1995_1999",
-      "source-layer": "lulc_nat_ant_1998_gpu_wgs84_dissolved",
+      "source-layer": "year_1998",
       "layout": {
         "visibility": "none"
       },
@@ -3854,7 +3852,7 @@
       "id": "lulc1999",
       "type": "fill",
       "source": "lulc_1995_1999",
-      "source-layer": "lulc_nat_ant_1999_gpu_wgs84_dissolved",
+      "source-layer": "year_1999",
       "layout": {
         "visibility": "none"
       },
@@ -3887,8 +3885,8 @@
     {
       "id": "lulc2000",
       "type": "fill",
-      "source": "lulc2000",
-      "source-layer": "lulc_nat_ant_2000_gpu_wgs84_dissolved",
+      "source": "lulc_2000_2004",
+      "source-layer": "year_2000",
       "layout": {
         "visibility": "none"
       },
@@ -3921,8 +3919,8 @@
     {
       "id": "lulc2001",
       "type": "fill",
-      "source": "lulc2001",
-      "source-layer": "lulc_nat_ant_2001_gpu_wgs84_dissolved",
+      "source": "lulc_2000_2004",
+      "source-layer": "year_2001",
       "layout": {
         "visibility": "none"
       },
@@ -3955,8 +3953,8 @@
     {
       "id": "lulc2002",
       "type": "fill",
-      "source": "lulc2002",
-      "source-layer": "lulc_nat_ant_2002_gpu_wgs84_dissolved",
+      "source": "lulc_2000_2004",
+      "source-layer": "year_2002",
       "layout": {
         "visibility": "none"
       },
@@ -3989,8 +3987,8 @@
     {
       "id": "lulc2003",
       "type": "fill",
-      "source": "lulc2003",
-      "source-layer": "lulc_nat_ant_2003_gpu_wgs84_dissolved",
+      "source": "lulc_2000_2004",
+      "source-layer": "year_2003",
       "layout": {
         "visibility": "none"
       },
@@ -4023,8 +4021,8 @@
     {
       "id": "lulc2004",
       "type": "fill",
-      "source": "lulc2004",
-      "source-layer": "lulc_nat_ant_2004_gpu_wgs84_dissolved",
+      "source": "lulc_2000_2004",
+      "source-layer": "year_2004",
       "layout": {
         "visibility": "none"
       },
@@ -4057,8 +4055,8 @@
     {
       "id": "lulc2005",
       "type": "fill",
-      "source": "lulc2005",
-      "source-layer": "lulc_nat_ant_2005_gpu_wgs84_dissolved",
+      "source": "lulc_2005_2009",
+      "source-layer": "year_2005",
       "layout": {
         "visibility": "none"
       },
@@ -4091,8 +4089,8 @@
     {
       "id": "lulc2006",
       "type": "fill",
-      "source": "lulc2006",
-      "source-layer": "lulc_nat_ant_2006_gpu_wgs84_dissolved",
+      "source": "lulc_2005_2009",
+      "source-layer": "year_2006",
       "layout": {
         "visibility": "none"
       },
@@ -4125,8 +4123,8 @@
     {
       "id": "lulc2007",
       "type": "fill",
-      "source": "lulc2007",
-      "source-layer": "lulc_nat_ant_2007_gpu_wgs84_dissolved",
+      "source": "lulc_2005_2009",
+      "source-layer": "year_2007",
       "layout": {
         "visibility": "none"
       },
@@ -4159,8 +4157,8 @@
     {
       "id": "lulc2008",
       "type": "fill",
-      "source": "lulc2008",
-      "source-layer": "lulc_nat_ant_2008_gpu_wgs84_dissolved",
+      "source": "lulc_2005_2009",
+      "source-layer": "year_2008",
       "layout": {
         "visibility": "none"
       },
@@ -4193,8 +4191,8 @@
     {
       "id": "lulc2009",
       "type": "fill",
-      "source": "lulc2009",
-      "source-layer": "lulc_nat_ant_2009_gpu_wgs84_dissolved",
+      "source": "lulc_2005_2009",
+      "source-layer": "year_2009",
       "layout": {
         "visibility": "none"
       },
@@ -4227,8 +4225,8 @@
     {
       "id": "lulc2010",
       "type": "fill",
-      "source": "lulc2010",
-      "source-layer": "lulc_nat_ant_2010_gpu_wgs84_dissolved",
+      "source": "lulc_2010-2014",
+      "source-layer": "year_2010",
       "layout": {
         "visibility": "none"
       },
@@ -4261,8 +4259,8 @@
     {
       "id": "lulc2011",
       "type": "fill",
-      "source": "lulc2011",
-      "source-layer": "lulc_nat_ant_2011_gpu_wgs84_dissolved",
+      "source": "lulc_2010-2014",
+      "source-layer": "year_2011",
       "layout": {
         "visibility": "none"
       },
@@ -4295,8 +4293,8 @@
     {
       "id": "lulc2012",
       "type": "fill",
-      "source": "lulc2012",
-      "source-layer": "lulc_nat_ant_2012_gpu_wgs84_dissolved",
+      "source": "lulc_2010-2014",
+      "source-layer": "year_2012",
       "layout": {
         "visibility": "none"
       },
@@ -4329,8 +4327,8 @@
     {
       "id": "lulc2013",
       "type": "fill",
-      "source": "lulc2013",
-      "source-layer": "lulc_nat_ant_2013_gpu_wgs84_dissolved",
+      "source": "lulc_2010-2014",
+      "source-layer": "year_2013",
       "layout": {
         "visibility": "none"
       },
@@ -4363,8 +4361,8 @@
     {
       "id": "lulc2014",
       "type": "fill",
-      "source": "lulc2014",
-      "source-layer": "lulc_nat_ant_2014_gpu_wgs84_dissolved",
+      "source": "lulc_2010-2014",
+      "source-layer": "year_2014",
       "layout": {
         "visibility": "none"
       },
@@ -4397,8 +4395,8 @@
     {
       "id": "lulc2015",
       "type": "fill",
-      "source": "lulc2015",
-      "source-layer": "lulc_nat_ant_2015_gpu_wgs84_dissolved",
+      "source": "lulc_2015_2019",
+      "source-layer": "year_2015",
       "layout": {
         "visibility": "none"
       },
@@ -4431,8 +4429,8 @@
     {
       "id": "lulc2016",
       "type": "fill",
-      "source": "lulc2016",
-      "source-layer": "lulc_nat_ant_2016_gpu_wgs84_dissolved",
+      "source": "lulc_2015_2019",
+      "source-layer": "year_2016",
       "layout": {
         "visibility": "none"
       },
@@ -4465,8 +4463,8 @@
     {
       "id": "lulc2017",
       "type": "fill",
-      "source": "lulc2017",
-      "source-layer": "lulc_nat_ant_2017_gpu_wgs84_dissolved",
+      "source": "lulc_2015_2019",
+      "source-layer": "year_2017",
       "layout": {
         "visibility": "none"
       },
@@ -4499,8 +4497,8 @@
     {
       "id": "lulc2018",
       "type": "fill",
-      "source": "lulc2018",
-      "source-layer": "lulc_nat_ant_2018_gpu_wgs84_dissolved",
+      "source": "lulc_2015_2019",
+      "source-layer": "year_2018",
       "layout": {
         "visibility": "none"
       },
@@ -4533,8 +4531,8 @@
     {
       "id": "lulc2019",
       "type": "fill",
-      "source": "lulc2019",
-      "source-layer": "lulc_nat_ant_2019_gpu_wgs84_dissolved",
+      "source": "lulc_2015_2019",
+      "source-layer": "year_2019",
       "layout": {
         "visibility": "none"
       },
@@ -4567,8 +4565,8 @@
     {
       "id": "lulc2020",
       "type": "fill",
-      "source": "lulc2020",
-      "source-layer": "lulc_nat_ant_2020_gpu_wgs84_dissolved",
+      "source": "lulc_2020_2023",
+      "source-layer": "year_2020",
       "layout": {
         "visibility": "none"
       },
@@ -4601,8 +4599,8 @@
     {
       "id": "lulc2021",
       "type": "fill",
-      "source": "lulc2021",
-      "source-layer": "lulc_nat_ant_2021_gpu_wgs84_dissolved",
+      "source": "lulc_2020_2023",
+      "source-layer": "year_2021",
       "layout": {
         "visibility": "none"
       },
@@ -4635,8 +4633,8 @@
     {
       "id": "lulc2022",
       "type": "fill",
-      "source": "lulc2022",
-      "source-layer": "lulc_nat_ant_2022_gpu_wgs84_dissolved",
+      "source": "lulc_2020_2023",
+      "source-layer": "year_2022",
       "layout": {
         "visibility": "none"
       },
@@ -4669,8 +4667,8 @@
     {
       "id": "lulc2023",
       "type": "fill",
-      "source": "lulc2023",
-      "source-layer": "lulc_nat_ant_2023_gpu_wgs84_dissolved",
+      "source": "lulc_2020_2023",
+      "source-layer": "year_2023",
       "layout": {
         "visibility": "none"
       },
