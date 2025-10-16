@@ -7,10 +7,9 @@ self.addEventListener('install', function(event) {
     console.log('Service Worker: Installing');
     event.waitUntil(
         caches.open(CACHE_NAME).then(function(cache) {
-            // Cache the main PMTiles files that are likely to be loaded first
+            // Cache essential static resources (HTML, CSS, JS)
             return cache.addAll([
-                'https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1985_gpu.pmtiles',
-                'https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1986_gpu.pmtiles'
+                // No PMTiles files - let them use native HTTP caching
             ]);
         })
     );
@@ -18,41 +17,43 @@ self.addEventListener('install', function(event) {
 
 // Fetch event - intercept network requests
 self.addEventListener('fetch', function(event) {
-    // Only handle PMTiles requests from our domain
-    if (event.request.url.includes(PMTILES_HOST) &&
-        event.request.url.includes('.pmtiles')) {
+    // Skip PMTiles files - let them use native HTTP caching with range requests
+    if (event.request.url.includes('.pmtiles')) {
+        console.log('Service Worker: Skipping PMTiles file, using native caching');
+        return; // Don't intercept PMTiles requests
+    }
 
-        event.respondWith(
-            caches.match(event.request).then(function(response) {
-                // Return cached version if available
-                if (response) {
-                    console.log('Service Worker: Serving from cache', event.request.url);
+    // Handle other requests normally (HTML, CSS, JS, etc.)
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            // Return cached version if available
+            if (response) {
+                console.log('Service Worker: Serving from cache', event.request.url);
+                return response;
+            }
+
+            // Otherwise fetch from network and cache
+            console.log('Service Worker: Fetching from network', event.request.url);
+            return fetch(event.request).then(function(response) {
+                // Don't cache if not a valid response
+                if (!response || response.status !== 200 || response.type !== 'basic') {
                     return response;
                 }
 
-                // Otherwise fetch from network and cache
-                console.log('Service Worker: Fetching from network', event.request.url);
-                return fetch(event.request).then(function(response) {
-                    // Don't cache if not a valid response
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
-                        return response;
-                    }
+                // Clone the response as it can only be consumed once
+                var responseToCache = response.clone();
 
-                    // Clone the response as it can only be consumed once
-                    var responseToCache = response.clone();
-
-                    caches.open(CACHE_NAME).then(function(cache) {
-                        cache.put(event.request, responseToCache);
-                    });
-
-                    return response;
-                }).catch(function(error) {
-                    console.error('Service Worker: Fetch failed', error);
-                    throw error;
+                caches.open(CACHE_NAME).then(function(cache) {
+                    cache.put(event.request, responseToCache);
                 });
-            })
-        );
-    }
+
+                return response;
+            }).catch(function(error) {
+                console.error('Service Worker: Fetch failed', error);
+                throw error;
+            });
+        })
+    );
 });
 
 // Activate event - clean up old caches
