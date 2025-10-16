@@ -17,161 +17,37 @@
       "type": "vector",
       "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/output.pmtiles"
     },
-    "lulc1985": {
+    "lulc_1985_1989": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1985_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1985-1989_ogr.pmtiles"
     },
-    "lulc1986": {
+    "lulc_1990_1994": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1986_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1990-1994_ogr.pmtiles"
     },
-    "lulc1987": {
+    "lulc_1995_1999": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1987_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1995-1999_ogr.pmtiles"
     },
-    "lulc1988": {
+    "lulc_2000_2004": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1988_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2000-2004_ogr.pmtiles"
     },
-    "lulc1989": {
+    "lulc_2005_2009": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1989_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2005-2009_ogr.pmtiles"
     },
-    "lulc1990": {
+    "lulc_2010_2014": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1990_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2010-2014_ogr.pmtiles"
     },
-    "lulc1991": {
+    "lulc_2015_2019": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1991_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2015-2019_ogr.pmtiles"
     },
-    "lulc1992": {
+    "lulc_2020_2023": {
       "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1992_gpu.pmtiles"
-    },
-    "lulc1993": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1993_gpu.pmtiles"
-    },
-    "lulc1994": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1994_gpu.pmtiles"
-    },
-    "lulc1995": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1995_gpu.pmtiles"
-    },
-    "lulc1996": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1996_gpu.pmtiles"
-    },
-    "lulc1997": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1997_gpu.pmtiles"
-    },
-    "lulc1998": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1998_gpu.pmtiles"
-    },
-    "lulc1999": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1999_gpu.pmtiles"
-    },
-    "lulc2000": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2000_gpu.pmtiles"
-    },
-    "lulc2001": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2001_gpu.pmtiles"
-    },
-    "lulc2002": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2002_gpu.pmtiles"
-    },
-    "lulc2003": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2003_gpu.pmtiles"
-    },
-    "lulc2004": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2004_gpu.pmtiles"
-    },
-    "lulc2005": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2005_gpu.pmtiles"
-    },
-    "lulc2006": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2006_gpu.pmtiles"
-    },
-    "lulc2007": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2007_gpu.pmtiles"
-    },
-    "lulc2008": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2008_gpu.pmtiles"
-    },
-    "lulc2009": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2009_gpu.pmtiles"
-    },
-    "lulc2010": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2010_gpu.pmtiles"
-    },
-    "lulc2011": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2011_gpu.pmtiles"
-    },
-    "lulc2012": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2012_gpu.pmtiles"
-    },
-    "lulc2013": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2013_gpu.pmtiles"
-    },
-    "lulc2014": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2014_gpu.pmtiles"
-    },
-    "lulc2015": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2015_gpu.pmtiles"
-    },
-    "lulc2016": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2016_gpu.pmtiles"
-    },
-    "lulc2017": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2017_gpu.pmtiles"
-    },
-    "lulc2018": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2018_gpu.pmtiles"
-    },
-    "lulc2019": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2019_gpu.pmtiles"
-    },
-    "lulc2020": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2020_gpu.pmtiles"
-    },
-    "lulc2021": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2021_gpu.pmtiles"
-    },
-    "lulc2022": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2022_gpu.pmtiles"
-    },
-    "lulc2023": {
-      "type": "vector",
-      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2023_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2020-2023_ogr.pmtiles"
     }
   },
   "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
@@ -850,277 +726,275 @@
       }
     },
     {
-      "id": "highway_path",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "==",
-          [
-            "get",
-            "class"
-          ],
-          "path"
-        ]
-      ],
+      "id": "lulc1985",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "lulc_nat_ant_1985_gpu_wgs84_dissolved",
       "layout": {
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "visible"
       },
       "paint": {
-        "line-color": "rgb(234, 234, 234)",
-        "line-opacity": 0.9,
-        "line-width": [
-          "interpolate",
+        "fill-color": [
+          "case",
           [
-            "exponential",
-            1.2
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
           ],
+          "#7AB5AA",
           [
-            "zoom"
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
           ],
-          13,
-          1,
-          20,
-          10
-        ]
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
-      "id": "highway_minor",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 8,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "match",
-          [
-            "get",
-            "class"
-          ],
-          [
-            "minor",
-            "service",
-            "track"
-          ],
-          true,
-          false
-        ]
-      ],
+      "id": "lulc1986",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "lulc_nat_ant_1986_gpu_wgs84_dissolved",
       "layout": {
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "hsl(0,0%,88%)",
-        "line-opacity": 0.9,
-        "line-width": [
-          "interpolate",
+        "fill-color": [
+          "case",
           [
-            "exponential",
-            1.55
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
           ],
+          "#7AB5AA",
           [
-            "zoom"
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
           ],
-          13,
-          1.8,
-          20,
-          20
-        ]
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
-      "id": "highway_major_casing",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "match",
-          [
-            "get",
-            "class"
-          ],
-          [
-            "primary",
-            "secondary",
-            "tertiary",
-            "trunk"
-          ],
-          true,
-          false
-        ]
-      ],
+      "id": "lulc1987",
+      "type": "fill",
+      "source": "lulc_1985_1989",
+      "source-layer": "lulc_nat_ant_1987_gpu_wgs84_dissolved",
       "layout": {
-        "line-cap": "butt",
-        "line-join": "miter"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "rgb(213, 213, 213)",
-        "line-dasharray": [
-          12,
-          0
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
         ],
-        "line-width": [
-          "interpolate",
-          [
-            "exponential",
-            1.3
-          ],
-          [
-            "zoom"
-          ],
-          10,
-          3,
-          20,
-          23
-        ]
+        "fill-opacity": 0.8
       }
     },
     {
-      "id": "highway_major_inner",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 11,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "match",
-          [
-            "get",
-            "class"
-          ],
-          [
-            "primary",
-            "secondary",
-            "tertiary",
-            "trunk"
-          ],
-          true,
-          false
-        ]
-      ],
+      "id": "lulc1990",
+      "type": "fill",
+      "source": "lulc_1990_1994",
+      "source-layer": "lulc_nat_ant_1990_gpu_wgs84_dissolved",
       "layout": {
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "#fff",
-        "line-width": [
-          "interpolate",
+        "fill-color": [
+          "case",
           [
-            "exponential",
-            1.3
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
           ],
+          "#7AB5AA",
           [
-            "zoom"
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
           ],
-          10,
-          2,
-          20,
-          20
-        ]
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
-      "id": "highway_major_subtle",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "maxzoom": 11,
-      "filter": [
-        "all",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "LineString",
-            "MultiLineString"
-          ],
-          true,
-          false
-        ],
-        [
-          "match",
-          [
-            "get",
-            "class"
-          ],
-          [
-            "primary",
-            "secondary",
-            "tertiary",
-            "trunk"
-          ],
-          true,
-          false
-        ]
-      ],
+      "id": "lulc1991",
+      "type": "fill",
+      "source": "lulc_1990_1994",
+      "source-layer": "lulc_nat_ant_1991_gpu_wgs84_dissolved",
       "layout": {
-        "line-cap": "round",
-        "line-join": "round"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "hsla(0,0%,85%,0.69)",
-        "line-width": 2
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1992",
+      "type": "fill",
+      "source": "lulc_1990_1994",
+      "source-layer": "lulc_nat_ant_1992_gpu_wgs84_dissolved",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1993",
+      "type": "fill",
+      "source": "lulc_1990_1994",
+      "source-layer": "lulc_nat_ant_1993_gpu_wgs84_dissolved",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "lulc1994",
+      "type": "fill",
+      "source": "lulc_1990_1994",
+      "source-layer": "lulc_nat_ant_1994_gpu_wgs84_dissolved",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            0
+          ],
+          "#7AB5AA",
+          [
+            "==",
+            [
+              "get",
+              "DN"
+            ],
+            1
+          ],
+          "#5D877F",
+          "transparent"
+        ],
+        "fill-opacity": 0.8
       }
     },
     {
@@ -3843,7 +3717,7 @@
     {
       "id": "lulc1995",
       "type": "fill",
-      "source": "lulc1995",
+      "source": "lulc_1995_1999",
       "source-layer": "lulc_nat_ant_1995_gpu_wgs84_dissolved",
       "layout": {
         "visibility": "none"
@@ -3877,7 +3751,7 @@
     {
       "id": "lulc1996",
       "type": "fill",
-      "source": "lulc1996",
+      "source": "lulc_1995_1999",
       "source-layer": "lulc_nat_ant_1996_gpu_wgs84_dissolved",
       "layout": {
         "visibility": "none"
@@ -3911,7 +3785,7 @@
     {
       "id": "lulc1997",
       "type": "fill",
-      "source": "lulc1997",
+      "source": "lulc_1995_1999",
       "source-layer": "lulc_nat_ant_1997_gpu_wgs84_dissolved",
       "layout": {
         "visibility": "none"
