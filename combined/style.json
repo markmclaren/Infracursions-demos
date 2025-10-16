@@ -15,163 +15,163 @@
     },
     "pmtiles": {
       "type": "vector",
-      "url": "pmtiles:///output.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/output.pmtiles"
     },
     "lulc1985": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1985_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1985_gpu.pmtiles"
     },
     "lulc1986": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1986_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1986_gpu.pmtiles"
     },
     "lulc1987": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1987_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1987_gpu.pmtiles"
     },
     "lulc1988": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1988_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1988_gpu.pmtiles"
     },
     "lulc1989": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1989_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1989_gpu.pmtiles"
     },
     "lulc1990": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1990_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1990_gpu.pmtiles"
     },
     "lulc1991": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1991_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1991_gpu.pmtiles"
     },
     "lulc1992": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1992_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1992_gpu.pmtiles"
     },
     "lulc1993": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1993_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1993_gpu.pmtiles"
     },
     "lulc1994": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1994_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1994_gpu.pmtiles"
     },
     "lulc1995": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1995_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1995_gpu.pmtiles"
     },
     "lulc1996": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1996_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1996_gpu.pmtiles"
     },
     "lulc1997": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1997_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1997_gpu.pmtiles"
     },
     "lulc1998": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1998_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1998_gpu.pmtiles"
     },
     "lulc1999": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_1999_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_1999_gpu.pmtiles"
     },
     "lulc2000": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2000_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2000_gpu.pmtiles"
     },
     "lulc2001": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2001_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2001_gpu.pmtiles"
     },
     "lulc2002": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2002_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2002_gpu.pmtiles"
     },
     "lulc2003": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2003_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2003_gpu.pmtiles"
     },
     "lulc2004": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2004_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2004_gpu.pmtiles"
     },
     "lulc2005": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2005_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2005_gpu.pmtiles"
     },
     "lulc2006": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2006_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2006_gpu.pmtiles"
     },
     "lulc2007": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2007_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2007_gpu.pmtiles"
     },
     "lulc2008": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2008_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2008_gpu.pmtiles"
     },
     "lulc2009": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2009_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2009_gpu.pmtiles"
     },
     "lulc2010": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2010_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2010_gpu.pmtiles"
     },
     "lulc2011": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2011_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2011_gpu.pmtiles"
     },
     "lulc2012": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2012_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2012_gpu.pmtiles"
     },
     "lulc2013": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2013_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2013_gpu.pmtiles"
     },
     "lulc2014": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2014_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2014_gpu.pmtiles"
     },
     "lulc2015": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2015_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2015_gpu.pmtiles"
     },
     "lulc2016": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2016_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2016_gpu.pmtiles"
     },
     "lulc2017": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2017_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2017_gpu.pmtiles"
     },
     "lulc2018": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2018_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2018_gpu.pmtiles"
     },
     "lulc2019": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2019_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2019_gpu.pmtiles"
     },
     "lulc2020": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2020_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2020_gpu.pmtiles"
     },
     "lulc2021": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2021_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2021_gpu.pmtiles"
     },
     "lulc2022": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2022_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2022_gpu.pmtiles"
     },
     "lulc2023": {
       "type": "vector",
-      "url": "pmtiles://pmtiles/lulc_nat_ant_2023_gpu.pmtiles"
+      "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_nat_ant_2023_gpu.pmtiles"
     }
   },
   "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
