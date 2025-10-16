@@ -225,8 +225,8 @@ function updateNonLulcLayerFilters(selectedYear) {
 
     nonLulcLayers.forEach(layerId => {
         if (map.getLayer(layerId)) {
-            console.log(`Updating filter for layer: ${layerId}`);
-            console.log(`Selected year: ${selectedYear}`);
+            //console.log(`Updating filter for layer: ${layerId}`);
+            //console.log(`Selected year: ${selectedYear}`);
             // Apply year filter using the unified 'year' property
             //const yearFilter = ['==', ['get', 'year'], selectedYear];
             //map.setFilter(layerId, yearFilter);
