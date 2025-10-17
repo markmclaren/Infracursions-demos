@@ -8,21 +8,6 @@
     <script src='https://unpkg.com/maplibre-gl@5.9.0/dist/maplibre-gl.js'></script>
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
     <script src="script.js"></script>
-
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('combined/sw.js')
-                    .then(function(registration) {
-                        console.log('Service Worker registered successfully:', registration);
-                    })
-                    .catch(function(error) {
-                        console.log('Service Worker registration failed:', error);
-                    });
-            });
-        }
-    </script>
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
