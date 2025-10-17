@@ -45,10 +45,6 @@ coverage/
 # Test files that shouldn't be committed
 test_*.geojson
 
-# Allow specific pmtiles-related files we want to track
-!combined/pmtiles/consolidate-pmtiles-*.js
-!combined/pmtiles/consolidated/*.pmtiles
-
 # But ignore other temporary pmtiles processing files
 combined/pmtiles/*.tmp.pmtiles
 combined/pmtiles/temp_*

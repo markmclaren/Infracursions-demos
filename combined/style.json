@@ -15,39 +15,39 @@
         },
         "lulc_1985_1989": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1985-1989_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_1985-1989_ogr.pmtiles"
         },
         "lulc_1990_1994": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1990-1994_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_1990-1994_ogr.pmtiles"
         },
         "lulc_1995_1999": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_1995-1999_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_1995-1999_ogr.pmtiles"
         },
         "lulc_2000_2004": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2000-2004_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_2000-2004_ogr.pmtiles"
         },
         "lulc_2005_2009": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2005-2009_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_2005-2009_ogr.pmtiles"
         },
         "lulc_2010_2014": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2010-2014_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_2010-2014_ogr.pmtiles"
         },
         "lulc_2015_2019": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2015-2019_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_2015-2019_ogr.pmtiles"
         },
         "lulc_2020_2023": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/consolidated/lulc_2020-2023_ogr.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/lulc_2020-2023_ogr.pmtiles"
         },
         "pmtiles": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/output.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/pmtiles/output.pmtiles"
         }
     },
     "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",

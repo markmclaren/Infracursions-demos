@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@mapbox/mvt-fixtures": "^3.10.0",
+    "@mapbox/vector-tile": "^2.0.4",
+    "pbf": "^4.0.1",
+    "pmtiles": "^4.3.0"
+  }
+}
