@@ -61,175 +61,6 @@
             }
         },
         {
-            "id": "airstrip",
-            "type": "circle",
-            "source": "pmtiles",
-            "source-layer": "airstrip",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "circle-radius": 6,
-                "circle-color": "#ff0000"
-            }
-        },
-        {
-            "id": "car",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "car",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#00ff00",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "conservation_unit",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "conservation_unit",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#0000ff",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "deforestation_deter",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "deforestation_deter",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#ffff00",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "indigenous_land",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "indigenous_land",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#ff00ff",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "map_region",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "map_region",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#00ffff",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "mining_detection",
-            "type": "circle",
-            "source": "pmtiles",
-            "source-layer": "mining_detection",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "circle-radius": 6,
-                "circle-color": "#ffA500"
-            }
-        },
-        {
-            "id": "non_designated_public_forest",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "non_designated_public_forest",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#800080",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "rural_settlement",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "rural_settlement",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#008000",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "sigef_private",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "sigef_private",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#800000",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "sigef_public",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "sigef_public",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#000080",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "snci_private",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "snci_private",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#808000",
-                "fill-opacity": 0.5
-            }
-        },
-        {
-            "id": "snci_public",
-            "type": "fill",
-            "source": "pmtiles",
-            "source-layer": "snci_public",
-            "layout": {
-                "visibility": "none"
-            },
-            "paint": {
-                "fill-color": "#008080",
-                "fill-opacity": 0.5
-            }
-        },
-        {
             "id": "park",
             "type": "fill",
             "source": "openmaptiles",
@@ -4869,6 +4700,175 @@
                     "transparent"
                 ],
                 "fill-opacity": 0.8
+            }
+        },
+        {
+            "id": "airstrip",
+            "type": "circle",
+            "source": "pmtiles",
+            "source-layer": "airstrip",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "circle-radius": 6,
+                "circle-color": "#ff0000"
+            }
+        },
+        {
+            "id": "car",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "car",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#00ff00",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "conservation_unit",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "conservation_unit",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#0000ff",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "deforestation_deter",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "deforestation_deter",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#ffff00",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "indigenous_land",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "indigenous_land",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#ff00ff",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "map_region",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "map_region",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#00ffff",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "mining_detection",
+            "type": "circle",
+            "source": "pmtiles",
+            "source-layer": "mining_detection",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "circle-radius": 6,
+                "circle-color": "#ffA500"
+            }
+        },
+        {
+            "id": "non_designated_public_forest",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "non_designated_public_forest",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#800080",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "rural_settlement",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "rural_settlement",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#008000",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "sigef_private",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "sigef_private",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#800000",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "sigef_public",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "sigef_public",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#000080",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "snci_private",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "snci_private",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#808000",
+                "fill-opacity": 0.5
+            }
+        },
+        {
+            "id": "snci_public",
+            "type": "fill",
+            "source": "pmtiles",
+            "source-layer": "snci_public",
+            "layout": {
+                "visibility": "none"
+            },
+            "paint": {
+                "fill-color": "#008080",
+                "fill-opacity": 0.5
             }
         }
     ]
