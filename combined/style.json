@@ -47,7 +47,7 @@
         },
         "pmtiles": {
             "type": "vector",
-            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined//output.pmtiles"
+            "url": "pmtiles://https://markmclaren.github.io/Infracursions-demos/combined/output.pmtiles"
         }
     },
     "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
