@@ -66,7 +66,7 @@
             "source": "pmtiles",
             "source-layer": "airstrip",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "circle-radius": 6,
@@ -79,7 +79,7 @@
             "source": "pmtiles",
             "source-layer": "car",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#00ff00",
@@ -92,7 +92,7 @@
             "source": "pmtiles",
             "source-layer": "conservation_unit",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#0000ff",
@@ -105,7 +105,7 @@
             "source": "pmtiles",
             "source-layer": "deforestation_deter",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#ffff00",
@@ -118,7 +118,7 @@
             "source": "pmtiles",
             "source-layer": "indigenous_land",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#ff00ff",
@@ -131,7 +131,7 @@
             "source": "pmtiles",
             "source-layer": "map_region",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#00ffff",
@@ -144,7 +144,7 @@
             "source": "pmtiles",
             "source-layer": "mining_detection",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "circle-radius": 6,
@@ -157,7 +157,7 @@
             "source": "pmtiles",
             "source-layer": "non_designated_public_forest",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#800080",
@@ -170,7 +170,7 @@
             "source": "pmtiles",
             "source-layer": "rural_settlement",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#008000",
@@ -183,7 +183,7 @@
             "source": "pmtiles",
             "source-layer": "sigef_private",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#800000",
@@ -196,7 +196,7 @@
             "source": "pmtiles",
             "source-layer": "sigef_public",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#000080",
@@ -209,7 +209,7 @@
             "source": "pmtiles",
             "source-layer": "snci_private",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#808000",
@@ -222,7 +222,7 @@
             "source": "pmtiles",
             "source-layer": "snci_public",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": "#008080",
@@ -3585,7 +3585,7 @@
             "source": "lulc_1985_1989",
             "source-layer": "year_1986",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3619,7 +3619,7 @@
             "source": "lulc_1985_1989",
             "source-layer": "year_1987",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3653,7 +3653,7 @@
             "source": "lulc_1985_1989",
             "source-layer": "year_1988",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3687,7 +3687,7 @@
             "source": "lulc_1985_1989",
             "source-layer": "year_1989",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3721,7 +3721,7 @@
             "source": "lulc_1990_1994",
             "source-layer": "year_1990",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3755,7 +3755,7 @@
             "source": "lulc_1990_1994",
             "source-layer": "year_1991",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3789,7 +3789,7 @@
             "source": "lulc_1990_1994",
             "source-layer": "year_1992",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3823,7 +3823,7 @@
             "source": "lulc_1990_1994",
             "source-layer": "year_1993",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3857,7 +3857,7 @@
             "source": "lulc_1990_1994",
             "source-layer": "year_1994",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3891,7 +3891,7 @@
             "source": "lulc_1995_1999",
             "source-layer": "year_1995",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3925,7 +3925,7 @@
             "source": "lulc_1995_1999",
             "source-layer": "year_1996",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3959,7 +3959,7 @@
             "source": "lulc_1995_1999",
             "source-layer": "year_1997",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -3993,7 +3993,7 @@
             "source": "lulc_1995_1999",
             "source-layer": "year_1998",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4027,7 +4027,7 @@
             "source": "lulc_1995_1999",
             "source-layer": "year_1999",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4061,7 +4061,7 @@
             "source": "lulc_2000_2004",
             "source-layer": "year_2000",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4095,7 +4095,7 @@
             "source": "lulc_2000_2004",
             "source-layer": "year_2001",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4129,7 +4129,7 @@
             "source": "lulc_2000_2004",
             "source-layer": "year_2002",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4163,7 +4163,7 @@
             "source": "lulc_2000_2004",
             "source-layer": "year_2003",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4197,7 +4197,7 @@
             "source": "lulc_2000_2004",
             "source-layer": "year_2004",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4231,7 +4231,7 @@
             "source": "lulc_2005_2009",
             "source-layer": "year_2005",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4265,7 +4265,7 @@
             "source": "lulc_2005_2009",
             "source-layer": "year_2006",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4299,7 +4299,7 @@
             "source": "lulc_2005_2009",
             "source-layer": "year_2007",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4333,7 +4333,7 @@
             "source": "lulc_2005_2009",
             "source-layer": "year_2008",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4367,7 +4367,7 @@
             "source": "lulc_2005_2009",
             "source-layer": "year_2009",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4401,7 +4401,7 @@
             "source": "lulc_2010_2014",
             "source-layer": "year_2010",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4435,7 +4435,7 @@
             "source": "lulc_2010_2014",
             "source-layer": "year_2011",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4469,7 +4469,7 @@
             "source": "lulc_2010_2014",
             "source-layer": "year_2012",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4503,7 +4503,7 @@
             "source": "lulc_2010_2014",
             "source-layer": "year_2013",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4537,7 +4537,7 @@
             "source": "lulc_2010_2014",
             "source-layer": "year_2014",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4571,7 +4571,7 @@
             "source": "lulc_2015_2019",
             "source-layer": "year_2015",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4605,7 +4605,7 @@
             "source": "lulc_2015_2019",
             "source-layer": "year_2016",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4639,7 +4639,7 @@
             "source": "lulc_2015_2019",
             "source-layer": "year_2017",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4673,7 +4673,7 @@
             "source": "lulc_2015_2019",
             "source-layer": "year_2018",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4707,7 +4707,7 @@
             "source": "lulc_2015_2019",
             "source-layer": "year_2019",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4741,7 +4741,7 @@
             "source": "lulc_2020_2023",
             "source-layer": "year_2020",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4775,7 +4775,7 @@
             "source": "lulc_2020_2023",
             "source-layer": "year_2021",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4809,7 +4809,7 @@
             "source": "lulc_2020_2023",
             "source-layer": "year_2022",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
@@ -4843,7 +4843,7 @@
             "source": "lulc_2020_2023",
             "source-layer": "year_2023",
             "layout": {
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "fill-color": [
