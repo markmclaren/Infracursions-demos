@@ -206,6 +206,7 @@ class AmazonMap {
             this.loadRegionData();
             this.onMainMapLoad();
             this.showAllInsetsByDefault();
+            this.initializeRegionToggles();
         });
 
         this.mainMap.on('zoom', () => {
@@ -511,6 +512,77 @@ class AmazonMap {
     // Useful for debugging or manual positioning
     getScreenPosition(lng, lat) {
         return this.geographicToScreen(lng, lat);
+    }
+
+    // Toggle region layer visibility
+    toggleRegionLayer(regionKey, visible) {
+        const fillLayerId = `region-fill-${regionKey}`;
+        const borderLayerId = `region-border-${regionKey}`;
+
+        if (visible) {
+            // Show layers
+            if (this.mainMap.getLayer(fillLayerId)) {
+                this.mainMap.setLayoutProperty(fillLayerId, 'visibility', 'visible');
+                this.mainMap.setLayoutProperty(borderLayerId, 'visibility', 'visible');
+            }
+        } else {
+            // Hide layers
+            if (this.mainMap.getLayer(fillLayerId)) {
+                this.mainMap.setLayoutProperty(fillLayerId, 'visibility', 'none');
+                this.mainMap.setLayoutProperty(borderLayerId, 'visibility', 'none');
+            }
+        }
+    }
+
+    // Initialize region layer toggles
+    initializeRegionToggles() {
+        // Set up event listeners for toggle checkboxes
+        document.getElementById('toggle-acre').addEventListener('change', (e) => {
+            this.toggleRegionLayer('acre', e.target.checked);
+            this.updateToggleAllState();
+        });
+
+        document.getElementById('toggle-madre').addEventListener('change', (e) => {
+            this.toggleRegionLayer('madre', e.target.checked);
+            this.updateToggleAllState();
+        });
+
+        document.getElementById('toggle-pando').addEventListener('change', (e) => {
+            this.toggleRegionLayer('pando', e.target.checked);
+            this.updateToggleAllState();
+        });
+
+        // Set up toggle all functionality
+        document.getElementById('toggle-all').addEventListener('change', (e) => {
+            this.toggleAllRegions(e.target.checked);
+        });
+    }
+
+    // Toggle all regions at once
+    toggleAllRegions(visible) {
+        // Update all individual checkboxes
+        document.getElementById('toggle-acre').checked = visible;
+        document.getElementById('toggle-madre').checked = visible;
+        document.getElementById('toggle-pando').checked = visible;
+
+        // Update all region layers
+        this.toggleRegionLayer('acre', visible);
+        this.toggleRegionLayer('madre', visible);
+        this.toggleRegionLayer('pando', visible);
+    }
+
+    // Update toggle all checkbox state based on individual checkboxes
+    updateToggleAllState() {
+        const acreChecked = document.getElementById('toggle-acre').checked;
+        const madreChecked = document.getElementById('toggle-madre').checked;
+        const pandoChecked = document.getElementById('toggle-pando').checked;
+
+        const allChecked = acreChecked && madreChecked && pandoChecked;
+        const noneChecked = !acreChecked && !madreChecked && !pandoChecked;
+
+        const toggleAllCheckbox = document.getElementById('toggle-all');
+        toggleAllCheckbox.checked = allChecked;
+        toggleAllCheckbox.indeterminate = !allChecked && !noneChecked;
     }
 
     // Show all insets by default when map loads
