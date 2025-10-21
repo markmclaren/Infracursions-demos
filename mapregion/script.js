@@ -33,16 +33,138 @@ class AmazonMap {
             pando: {
                 name: "Pando, Bolivia",
                 subtitle: "Logging",
-                center: [-68.862935, -10.899291],
+                center: [-68.984913, -11.617947],
                 zoom: 12,
-                marker: [-68.862935, -10.899291],
+                marker: [-68.984913, -11.617947],
                 position: {
-                    lng: -68.862935,
-                    lat: -10.899291,
+                    lng: -68.984913,
+                    lat: -11.617947,
                     offset: { x: 50, y: 50 }
                 }
             }
         };
+    }
+
+    // Load GeoJSON region data and add to map
+    loadRegionData() {
+        // Define region configurations with styling
+        const regions = {
+            acre: {
+                file: 'acre.geojson',
+                color: '#e74c3c', // Red for Acre (Brazil)
+                opacity: 0.3
+            },
+            madre: {
+                file: 'madrede_dios.geojson',
+                color: '#f39c12', // Orange for Madre de Dios (Peru)
+                opacity: 0.3
+            },
+            pando: {
+                file: 'pando.geojson',
+                color: '#27ae60', // Green for Pando (Bolivia)
+                opacity: 0.3
+            }
+        };
+
+        // Load each region
+        Object.keys(regions).forEach(key => {
+            const region = regions[key];
+
+            // Load GeoJSON file
+            fetch(region.file)
+                .then(response => response.json())
+                .then(data => {
+                    // Add source to map
+                    this.mainMap.addSource(`region-${key}`, {
+                        type: 'geojson',
+                        data: data
+                    });
+
+                    // Add fill layer
+                    this.mainMap.addLayer({
+                        id: `region-fill-${key}`,
+                        type: 'fill',
+                        source: `region-${key}`,
+                        paint: {
+                            'fill-color': region.color,
+                            'fill-opacity': region.opacity,
+                            'fill-opacity-transition': {
+                                duration: 300
+                            }
+                        }
+                    });
+
+                    // Add border layer
+                    this.mainMap.addLayer({
+                        id: `region-border-${key}`,
+                        type: 'line',
+                        source: `region-${key}`,
+                        paint: {
+                            'line-color': this.darkenColor(region.color, 0.3),
+                            'line-width': 2,
+                            'line-opacity': 0.8
+                        }
+                    });
+
+                    // Add hover effects
+                    this.addRegionInteractivity(key, region);
+                })
+                .catch(error => {
+                    console.error(`Error loading ${region.file}:`, error);
+                });
+        });
+    }
+
+    // Add interactivity to region polygons
+    addRegionInteractivity(regionKey, regionConfig) {
+        const map = this.mainMap;
+
+        // Hover effect - increase opacity on hover
+        map.on('mouseenter', `region-fill-${regionKey}`, () => {
+            map.setPaintProperty(`region-fill-${regionKey}`, 'fill-opacity', regionConfig.opacity * 1.5);
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', `region-fill-${regionKey}`, () => {
+            map.setPaintProperty(`region-fill-${regionKey}`, 'fill-opacity', regionConfig.opacity);
+            map.getCanvas().style.cursor = '';
+        });
+
+        // Click effect - show region info
+        map.on('click', `region-fill-${regionKey}`, (e) => {
+            e.originalEvent.stopPropagation();
+
+            // Get region name from locations data
+            const location = this.locations[regionKey];
+            if (location) {
+                // Create popup with region information
+                new maplibregl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(`
+                        <div style="font-family: 'Courier New', Courier, monospace;">
+                            <strong style="font-size: 16px;">${location.name}</strong><br>
+                            <span style="font-size: 14px; opacity: 0.9;">${location.subtitle}</span><br>
+                            <small style="opacity: 0.7;">Click marker for detailed view</small>
+                        </div>
+                    `)
+                    .addTo(map);
+            }
+        });
+    }
+
+    // Helper function to darken colors for borders
+    darkenColor(color, percent) {
+        // Convert hex color to RGB, darken it, then return as hex
+        const hex = color.replace('#', '');
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+
+        const darkenedR = Math.max(0, Math.floor(r * (1 - percent)));
+        const darkenedG = Math.max(0, Math.floor(g * (1 - percent)));
+        const darkenedB = Math.max(0, Math.floor(b * (1 - percent)));
+
+        return `#${darkenedR.toString(16).padStart(2, '0')}${darkenedG.toString(16).padStart(2, '0')}${darkenedB.toString(16).padStart(2, '0')}`;
     }
 
     initialize() {
@@ -58,7 +180,7 @@ class AmazonMap {
                             'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
                         ],
                         tileSize: 256,
-                        attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                        attribution: '© Esri & GIS User Community'
                     }
                 },
                 layers: [
@@ -71,7 +193,7 @@ class AmazonMap {
                     }
                 ]
             },
-            center: [-68.250977, -10.245638],
+            center: [-69.686875, -10.381195],
             zoom: 6.5,
             minZoom: 3,
             maxZoom: 15
@@ -81,7 +203,9 @@ class AmazonMap {
         this.mainMap.addControl(new maplibregl.FullscreenControl(), 'top-right');
 
         this.mainMap.on('load', () => {
+            this.loadRegionData();
             this.onMainMapLoad();
+            this.showAllInsetsByDefault();
         });
 
         this.mainMap.on('zoom', () => {
@@ -388,6 +512,43 @@ class AmazonMap {
     getScreenPosition(lng, lat) {
         return this.geographicToScreen(lng, lat);
     }
+
+    // Show all insets by default when map loads
+    showAllInsetsByDefault() {
+        // Set all locations as active
+        Object.keys(this.locations).forEach(key => {
+            this.activeInsets.add(key);
+        });
+
+        // Show all insets after a short delay to ensure DOM elements are ready
+        setTimeout(() => {
+            Object.keys(this.locations).forEach(key => {
+                const insetWindow = document.getElementById(`inset-${key}`);
+                const insetLabel = document.getElementById(`label-${key}`);
+                const insetLine = document.getElementById(`line-${key}`);
+
+                if (insetWindow && insetLabel && insetLine) {
+                    // Show the inset elements
+                    insetWindow.classList.add('visible');
+                    insetLabel.classList.add('visible');
+                    insetLine.classList.add('visible');
+
+                    // Position everything correctly
+                    this.positionMarkerAndLine(key);
+
+                    // Ensure inset map is loaded and positioned correctly
+                    if (this.insetMaps[key] && !this.insetMaps[key].loaded()) {
+                        this.insetMaps[key].on('load', () => {
+                            this.insetMaps[key].setCenter(this.locations[key].center);
+                            this.insetMaps[key].setZoom(this.locations[key].zoom);
+                        });
+                    }
+                }
+            });
+        }, 100); // Small delay to ensure all elements are rendered
+    }
+
+
 }
 
 // Global function for close buttons
