@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Rainforest - Habitat Fragmentation</title>
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="map-container">
+        <div id="map"></div>
+
+        <!-- Inset Windows -->
+        <div id="inset-acre" class="inset-window inset-acre">
+            <div class="inset-content">
+                <div class="inset-map" id="inset-map-acre"></div>
+                <button class="inset-close" onclick="closeInset('acre')">&times;</button>
+            </div>
+        </div>
+
+        <div id="inset-madre" class="inset-window inset-madre">
+            <div class="inset-content">
+                <div class="inset-map" id="inset-map-madre"></div>
+                <button class="inset-close" onclick="closeInset('madre')">&times;</button>
+            </div>
+        </div>
+
+        <div id="inset-pando" class="inset-window inset-pando">
+            <div class="inset-content">
+                <div class="inset-map" id="inset-map-pando"></div>
+                <button class="inset-close" onclick="closeInset('pando')">&times;</button>
+            </div>
+        </div>
+
+        <!-- Inset Labels -->
+        <div id="label-acre" class="inset-label">
+            <h4>Acre, Brazil</h4>
+            <div class="subtitle">Land grabbing</div>
+        </div>
+
+        <div id="label-madre" class="inset-label">
+            <h4>Madre de Dios, Peru</h4>
+            <div class="subtitle">Gold mining</div>
+        </div>
+
+        <div id="label-pando" class="inset-label">
+            <h4>Pando, Bolivia</h4>
+            <div class="subtitle">Logging</div>
+        </div>
+
+        <!-- Connection Lines -->
+        <div id="line-acre" class="inset-line"></div>
+        <div id="line-madre" class="inset-line"></div>
+        <div id="line-pando" class="inset-line"></div>
+    </div>
+
+    <div class="title-overlay">
+        <h1>Habitat Fragmentation in the Amazon Rainforest - What is INFRACURIONS?</h1>
+        <p class="map-title">MAP REGION</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
