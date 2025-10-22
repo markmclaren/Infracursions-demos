@@ -233,6 +233,7 @@ class AmazonMap {
             markerElement.style.border = '3px solid white';
             markerElement.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
             markerElement.style.cursor = 'pointer';
+            markerElement.style.zIndex = '1000';
 
             // Create popup
             const popup = new maplibregl.Popup({
@@ -427,17 +428,24 @@ class AmazonMap {
         if (!insetWindow || !insetLine || !marker) return;
 
         // First position the inset geographically
-        const insetPos = this.positionInsetGeographically(locationKey);
+        this.positionInsetGeographically(locationKey);
+
+        // Force a reflow to ensure positions are updated
+        void insetWindow.offsetHeight;
 
         const container = document.querySelector('.map-container');
         const containerRect = container.getBoundingClientRect();
-        const windowRect = insetWindow.getBoundingClientRect();
 
-        // Get marker position on screen
+        // Get marker's current geographic position and convert to screen coordinates
         const markerLngLat = marker.getLngLat();
-        const markerScreenPos = this.geographicToScreen(markerLngLat.lng, markerLngLat.lat);
+        const markerScreenPos = this.mainMap.project([markerLngLat.lng, markerLngLat.lat]);
+        
+        // The marker center is at the projected position (MapLibre centers markers at their anchor point)
+        const markerCenterX = markerScreenPos.x;
+        const markerCenterY = markerScreenPos.y;
 
-        // Calculate center of inset window
+        // Get inset window center relative to container
+        const windowRect = insetWindow.getBoundingClientRect();
         const windowCenterX = windowRect.left + windowRect.width / 2 - containerRect.left;
         const windowCenterY = windowRect.top + windowRect.height / 2 - containerRect.top;
 
@@ -451,7 +459,7 @@ class AmazonMap {
             labelY = windowCenterY - labelRect.height / 2;
         } else if (locationKey === 'madre') {
             // Madre - position label above inset
-            labelX = windowCenterX - labelRect.width / 2;
+            labelX = windowCenterX - labelRect.width / 2 + containerRect.left;
             labelY = windowRect.top - labelRect.height - 15;
         } else if (locationKey === 'pando') {
             // Pando - position label to the right of inset
@@ -464,9 +472,9 @@ class AmazonMap {
             insetLabel.style.top = `${labelY}px`;
         }
 
-        // Position and rotate connection line from marker to inset center
-        const lineStartX = markerScreenPos.x;
-        const lineStartY = markerScreenPos.y;
+        // Position and rotate connection line from marker center to inset center
+        const lineStartX = markerCenterX;
+        const lineStartY = markerCenterY;
         const lineEndX = windowCenterX;
         const lineEndY = windowCenterY;
 
@@ -475,19 +483,35 @@ class AmazonMap {
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
         const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
 
-        insetLine.style.left = `${lineStartX}px`;
-        insetLine.style.top = `${lineStartY}px`;
+        // Get the line's height to center it properly
+        const lineHeight = 3; // matches CSS height
+        
+        // Calculate the offset needed to center the line vertically
+        // We need to shift the line up by half its height so the center aligns with the marker center
+        const angleRad = Math.atan2(deltaY, deltaX);
+        const verticalOffset = (lineHeight / 2) * Math.sin(angleRad + Math.PI / 2);
+        const horizontalOffset = (lineHeight / 2) * Math.cos(angleRad + Math.PI / 2);
+
+        insetLine.style.left = `${lineStartX - horizontalOffset}px`;
+        insetLine.style.top = `${lineStartY - verticalOffset}px`;
         insetLine.style.width = `${distance}px`;
         insetLine.style.transform = `rotate(${angle}deg)`;
-        insetLine.style.transformOrigin = '0 0';
+        insetLine.style.transformOrigin = '0 center';
     }
 
     // Method to update inset positions (useful for responsive design)
     updateInsetPositions() {
-        Object.keys(this.locations).forEach(key => {
-            if (this.activeInsets.has(key)) {
-                this.positionMarkerAndLine(key);
-            }
+        // Use requestAnimationFrame to batch updates and avoid performance issues
+        if (this.updatePositionsTimeout) {
+            cancelAnimationFrame(this.updatePositionsTimeout);
+        }
+        
+        this.updatePositionsTimeout = requestAnimationFrame(() => {
+            Object.keys(this.locations).forEach(key => {
+                if (this.activeInsets.has(key)) {
+                    this.positionMarkerAndLine(key);
+                }
+            });
         });
     }
 
